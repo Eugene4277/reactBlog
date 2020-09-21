@@ -8,17 +8,17 @@ function Login(props) {
   const user = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { goBack } = props.history;
 
   const isDisabled = email && password ? false : true;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.trim() && password.trim()) {
-      user.login(email.trim(), password.trim());
+      user.login(email.trim(), password.trim(), goBack);
 
       setEmail("");
       setPassword("");
-      props.history.goBack();
     } else {
     }
   };

@@ -74,7 +74,7 @@ function UserState({ children }) {
     }
   };
 
-  const login = (email, password) => {
+  const login = (email, password, goBack) => {
     const user = {
       email,
       password,
@@ -89,6 +89,7 @@ function UserState({ children }) {
             type: actions.LOGIN_USER,
             payload,
           });
+          goBack();
         })
         .catch(function (error) {
           var errorCode = error.code;

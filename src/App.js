@@ -13,6 +13,7 @@ import Logout from "./pages/Logout";
 import NotFound from "./pages/NotFound";
 import Breadcrumbs from "./components/Breadcrumbs";
 import Profile from "./pages/Profile";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Redirect to="/not-found" />
             </Switch>
           </div>
+          <Footer />
         </BrowserRouter>
       </PostsState>
     </UserState>
